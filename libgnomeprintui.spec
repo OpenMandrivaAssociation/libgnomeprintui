@@ -1,11 +1,12 @@
 %define lib_major   0
 %define lib_name	%mklibname gnomeprintui 2-2 %{lib_major}
+%define develname %mklibname -d gnomeprintui 2-2
 
 %define req_libgnomeprint_version 2.12.1
 
 Summary: GNOME print library
 Name: libgnomeprintui
-Version: 2.18.0
+Version: 2.18.1
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 License: LGPL
@@ -42,7 +43,7 @@ described in:
 
    http://www.levien.com/gnome/print-arch.html
 
-%package -n %{lib_name}-devel
+%package -n %develname
 Summary:	Static libraries, include files for GNOME print
 Group:		Development/GNOME and GTK+
 Provides:	%{name}-devel = %{version}-%{release}
@@ -50,8 +51,9 @@ Provides:	%{name}2-2-devel = %{version}-%{release}
 Requires:	%{lib_name} = %{version}-%{release}
 Requires:	libgnomeprint2-2-devel >= %{req_libgnomeprint_version}
 Requires:	libgnomecanvas2-devel >= 1.117.0
+Obsoletes: %mklibname -d gnomeprintui 2-2 0
 
-%description -n %{lib_name}-devel
+%description -n %develname
 This is an implementation of the Gnome Printing Architecture, as
 described in:
 
@@ -85,9 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/libgnomeprintui
 
 %files -n %{lib_name} 
-%{_libdir}/*.so.*
+%{_libdir}/libgnomeprintui-2-2.so.0*
 
-%files -n %{lib_name}-devel
+%files -n %develname
 %defattr(-,root,root)
 %doc ChangeLog
 %doc %{_datadir}/gtk-doc/html/*
