@@ -14,6 +14,7 @@ Patch0: libgnomeprintui-2.18.1-printerdrake.patch
 License: LGPL
 Group: System/Libraries
 Url: http://www.levien.com/gnome/print-arch.html
+BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: libgnomeprint2-2-devel >= %{req_libgnomeprint_version}
 BuildRequires: libgnomecanvas2-devel >= 1.117.0
 BuildRequires: libglade2.0-devel
