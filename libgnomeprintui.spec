@@ -66,7 +66,7 @@ described in:
 
 %build
 %configure2_5x --enable-gtk-doc
-%make
+%make LIBS=-lm
 
 %install
 rm -rf $RPM_BUILD_ROOT
