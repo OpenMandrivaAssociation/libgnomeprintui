@@ -6,12 +6,10 @@
 
 Summary: GNOME print library
 Name: libgnomeprintui
-Version: 2.18.2
-Release: %mkrel 2
+Version: 2.18.3
+Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-# (fc) 2.18.1-2mdv call printerdrake and not gnome-cups-add for Add printer button
-Patch0: libgnomeprintui-2.18.1-printerdrake.patch
-License: LGPL
+License: LGPLv2+
 Group: System/Libraries
 Url: http://www.levien.com/gnome/print-arch.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
@@ -21,10 +19,11 @@ BuildRequires: libglade2.0-devel
 BuildRequires: gtk+2-devel >= 2.4.0
 BuildRequires: gnome-icon-theme >= 1.1.92
 BuildRequires: gtk-doc
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: autoconf2.5 >= 2.54
 Requires: libgnomeprint >= %{req_libgnomeprint_version}
 Requires: gnome-icon-theme >= 1.1.92
+Requires: gnome-cups-manager
 Conflicts: %{_lib}gnomeprintui2-2_0 < 2.12
 
 
@@ -64,7 +63,6 @@ described in:
 
 %prep
 %setup -q
-%patch0 -p1 -b .printerdrake
 
 %build
 %configure2_5x --enable-gtk-doc
