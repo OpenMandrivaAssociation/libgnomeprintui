@@ -7,8 +7,10 @@
 Summary: GNOME print library
 Name: libgnomeprintui
 Version: 2.18.3
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+# (fc) 2.18.3-2mdv use system-config-printer, not gnome-cups-add
+Patch0:  libgnomeprintui-2.18.3-system-config-printer.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://www.levien.com/gnome/print-arch.html
@@ -23,7 +25,7 @@ BuildRequires: intltool
 BuildRequires: autoconf2.5 >= 2.54
 Requires: libgnomeprint >= %{req_libgnomeprint_version}
 Requires: gnome-icon-theme >= 1.1.92
-Requires: gnome-cups-manager
+Suggests: system-config-printer
 Conflicts: %{_lib}gnomeprintui2-2_0 < 2.12
 
 
@@ -63,6 +65,7 @@ described in:
 
 %prep
 %setup -q
+%patch0 -p1 -b .system-config-printer
 
 %build
 %configure2_5x --enable-gtk-doc
