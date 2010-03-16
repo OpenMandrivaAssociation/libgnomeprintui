@@ -7,7 +7,7 @@
 Summary: GNOME print library
 Name: libgnomeprintui
 Version: 2.18.4
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 # (fc) 2.18.3-2mdv use system-config-printer, not gnome-cups-add
 Patch0:  libgnomeprintui-2.18.3-system-config-printer.patch
