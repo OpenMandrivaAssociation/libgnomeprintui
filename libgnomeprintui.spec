@@ -73,9 +73,9 @@ rm -rf %{buildroot}
 
 %makeinstall_std
 
-%find_lang %{name}-%{api}
+%find_lang %{name}-2.2
 
-%files -f %{name}-%{api}.lang
+%files -f %{name}-2.2.lang
 %doc README AUTHORS NEWS 
 %{_datadir}/libgnomeprintui
 
