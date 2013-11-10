@@ -18,7 +18,8 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/%{url_ver}/%{name
 # (fc) 2.18.3-2mdv use system-config-printer, not gnome-cups-add
 Patch0:		libgnomeprintui-2.18.3-system-config-printer.patch
 
-BuildRequires:	gnome-icon-theme >= 1.1.92
+BuildRequires:	gnome-icon-theme
+BuildRequires:	gnome-icon-theme-devel
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(libgnomeprint-2.2)
