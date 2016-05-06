@@ -1,4 +1,5 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
+%define _disable_lto 1
 
 %define api	2-2
 %define major	0
@@ -10,7 +11,7 @@
 Summary:	GNOME print library
 Name:		libgnomeprintui
 Version:	2.18.6
-Release:	13
+Release:	14
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.levien.com/gnome/print-arch.html
