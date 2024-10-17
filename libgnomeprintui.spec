@@ -14,7 +14,7 @@ Version:	2.18.6
 Release:	14
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		http://www.levien.com/gnome/print-arch.html
+Url:		https://www.levien.com/gnome/print-arch.html
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/%{url_ver}/%{name}-%{version}.tar.bz2
 # (fc) 2.18.3-2mdv use system-config-printer, not gnome-cups-add
 Patch0:		libgnomeprintui-2.18.3-system-config-printer.patch
